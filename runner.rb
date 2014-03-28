@@ -59,10 +59,32 @@ class Runner
   end
 
   def modify_existing_contact 
-    
+    puts "Enter contact id to modify"
+    id = gets.chomp.to_i
+    # does contact exist?
+    done = false
+    while !done
+      puts "Which attribute do you want to modify?"
+      puts "[1] First name"
+      puts "[2] Last name"
+      puts "[3] Email"
+      puts "[4] Notes"
+      puts "[0] Go back to menu"
+      attribute_type = gets.chomp
+      done = true if attribute_type == "0"
+      if !done
+        puts "Are you sure you want to modify #{attribute_type}?"
+        continue = gets.chomp
+        next if continue.to_s.downcase == "n"
+        puts "Enter new value: "
+        attribute_value = gets.chomp
+        @rolodex.modify_existing_contact(id, attribute_type, attribute_value)
+      end
+    end
   end
 
   def delete_existing_contact 
+
   end
 
   def display_all 

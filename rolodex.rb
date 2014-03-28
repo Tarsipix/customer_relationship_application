@@ -1,6 +1,7 @@
 require './contact'
 
 class Rolodex
+
   def initialize
     @contacts = []
   end
@@ -9,7 +10,9 @@ class Rolodex
     @contacts << Contact.new(first_name,last_name,email,notes)
   end
 
-  def modify_existing_contact 
+  def modify_existing_contact(id, attribute_type, attribute_value) 
+    # if attribute_type == "1"
+    # elsif
   end
 
   def delete_existing_contact 

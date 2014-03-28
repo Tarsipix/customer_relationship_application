@@ -84,7 +84,9 @@ class Runner
   end
 
   def delete_existing_contact 
-
+    puts "Enter id of contact to be deleted"
+    id = gets.chomp.to_i
+    @rolodex.delete_existing_contact(id)
   end
 
   def display_all 
@@ -92,6 +94,9 @@ class Runner
   end
 
   def display_contact 
+    puts "Enter id of contact to display"
+    id = gets.chomp.to_i
+    @rolodex.display_contact(id)
   end
 
   def display_attribute    

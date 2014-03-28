@@ -15,7 +15,8 @@ class Rolodex
     # elsif
   end
 
-  def delete_existing_contact 
+  def delete_existing_contact(id)
+    @contacts.delete_if {|contact| contact.id == id}
   end
 
   def display_all 
@@ -26,6 +27,7 @@ class Rolodex
   end
 
   def display_contact 
+    
   end
 
   def display_attribute    

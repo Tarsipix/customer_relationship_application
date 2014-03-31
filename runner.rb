@@ -1,4 +1,4 @@
-require './rolodex'
+require_relative "rolodex"
 
 class Runner
   def initialize(name)
@@ -9,11 +9,11 @@ class Runner
   def print_main_menu
     puts "CRM App list of available commands"
     puts "[1] Add a new contact"
-    puts "[2] modify"
+    puts "[2] modify INCOMPLETE"
     puts "[3] delete"
     puts "[4] display all"
     puts "[5] display contact"
-    puts "[6] display attribute"
+    puts "[6] display attribute INCOMPLETE"
     puts "[0] exit"
     puts "[00] clear"
     print "Enter a number: "
@@ -21,7 +21,6 @@ class Runner
 
   def call_option(user_selected)
     done = false
-
     case user_selected
     when "1", "add"
       add_new_contact
@@ -99,7 +98,13 @@ class Runner
     @rolodex.display_contact(id)
   end
 
-  def display_attribute    
+  def display_attribute 
+    puts "Enter attribute to display"
+    puts "[1] First name"
+    puts "[2] Last name"
+    puts "[3] Email"
+    puts "[4] Notes"
+    @rolodex.display_attribute(attribute_type)
   end
 
   def what_is_the_name_of_this_CRM_again

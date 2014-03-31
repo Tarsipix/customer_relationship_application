@@ -1,4 +1,4 @@
-require './contact'
+require_relative "contact"
 
 class Rolodex
 
@@ -19,17 +19,33 @@ class Rolodex
     @contacts.delete_if {|contact| contact.id == id}
   end
 
-  def display_all 
+  def display_all
     puts "Displaying all contacts:"
     @contacts.each do |contact|
       puts contact.to_s
     end
   end
 
-  def display_contact 
-    
+  def display_contact(id)
+    @contacts.each do |contact|
+      puts contact.to_s if contact.id == id.to_i
+    end
   end
 
-  def display_attribute    
+  def display_attribute(attribute_type)
+  
+    # @contacts.each do |contact|
+    #   case attribute_type
+    #   when 1
+
+    #   when 2
+
+    #   when 3
+
+    #   when 4
+
+    #   when 5
+    #   else
+    # end
   end
 end
